@@ -1,0 +1,7 @@
+## File types ##
+*.ods
+*.pdf
+
+## Folders ##
+*.ipynb_checkpoints
+*__pycache__
