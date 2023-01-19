@@ -1,3 +1,9 @@
+"""
+Node
+
+Module containing the Node class used for linked lists and queues.
+"""
+
 __all__ = ["Node"]
 
 

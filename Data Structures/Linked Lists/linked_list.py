@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Linked List
+
+Module containing a class for the Linked List data type.
+"""
+
 __all__ = ["LinkedList"]
 
 from node import Node

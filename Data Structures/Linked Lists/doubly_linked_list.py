@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Doubly Linked List
+
+Module containing classes for a Doubly Linked List data type.
+"""
+
 __all__ = ["Node", "DoublyLinkedList"]
 
 

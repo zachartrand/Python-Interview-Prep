@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+"""
+Queue Module
+"""
+
 __all__ = ["Queue"]
 
 from node import Node
