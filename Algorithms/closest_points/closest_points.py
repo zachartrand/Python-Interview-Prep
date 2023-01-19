@@ -16,8 +16,12 @@ Modified from C++ code from this GeeksForGeeks webpage:
 __all__ = ["closest_distance", "get_distance"]
 
 from math import hypot as _hypot, inf as _inf
+from typing import Sequence
 
 THRESHOLD: int = 32  # Should be no lower than 3, no greater than 64.
+
+point_type = Sequence[float]
+point_array_type = Sequence[point_type]
 
 # The first version of this module used a Point class to represent points. 
 # I rewrote the module to apply to tuples or arrays representing points 
@@ -57,7 +61,7 @@ def main():
     print()
 
 
-def get_distance(point_1: tuple, point_2: tuple):
+def get_distance(point_1: point_type, point_2: point_type):
     """
     Return the distance between two points.
     """
@@ -67,7 +71,7 @@ def get_distance(point_1: tuple, point_2: tuple):
     return _hypot(dx, dy)
 
 
-def _closest_distance_naive(point_array):
+def _closest_distance_naive(point_array: point_array_type):
     """
     Return the shortest distance between two points from an array of
     points.
@@ -96,7 +100,7 @@ def _closest_distance_naive(point_array):
     return min_distance, point_1, point_2
 
 
-def _closest_in_strip(strip):
+def _closest_in_strip(strip: point_array_type):
     """
     Return the shortest distance between two points within a strip.
     """
@@ -121,7 +125,9 @@ def _closest_in_strip(strip):
     return min_distance, point_1, point_2
 
 
-def _closest_distance_recursive(point_array_x_sorted, point_array_y_sorted, left_index: int = 0):
+def _closest_distance_recursive(point_array_x_sorted: point_array_type, 
+                                point_array_y_sorted: point_array_type, 
+                                left_index: int = 0):
     """
     Return the shortest distance between two points from an array of
     points using two sorted copies of the array, one by x-values and
@@ -197,7 +203,7 @@ def _closest_distance_recursive(point_array_x_sorted, point_array_y_sorted, left
     return min_distance, point_1, point_2
 
 
-def closest_distance(point_array):
+def closest_distance(point_array: point_array_type):
     """
     Return the shortest distance between two points from an array of
     points.
